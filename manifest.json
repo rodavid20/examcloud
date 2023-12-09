@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Exam Cloud Shortcuts",
+  "version": "1.0",
+  "author":"Roshan David Jathanna",
+   "description": "Faculty members can use ctrl+right and ctrl+left to move to next and prev paper in ExamCloud - developed by: rodavid20@gmail.com",
+   "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [ {
+    "all_frames": true,
+    "js": [ "jquery.js", "content-script-examcloud.js" ],
+    "matches": [ "https://manipal.examcloud.in/evaluation/*"]
+  }  ],
+ "permissions": ["storage","tabs"],
+ "commands": {
+        "navigate-left": {
+            "suggested_key": {
+                "default": "Ctrl+Left",
+                "mac": "Ctrl+Left",
+				"windows": "Ctrl+Left"
+            },
+            "description": "Navigate Left"
+        },
+        "navigate-right": {
+            "suggested_key": {
+                "default": "Ctrl+Right",
+                "mac": "Ctrl+Right",
+				"windows": "Ctrl+Right"
+            },
+            "description": "Navigate Right"
+        }
+    }
+  
+}
